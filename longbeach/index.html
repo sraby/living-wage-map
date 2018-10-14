@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+<title>Long Beach: Stories of LA Gentrification</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<!-- load code libraries -->
+<link rel="stylesheet" href="lib/min.cartodb.css" />
+<!-- <script src="lib/jquery.min.js"></script> -->
+<script src="lib/cartodb.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'-->
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:light,regular,regularitalic,semi-bold,bold,bolditalic" rel="stylesheet">
+<link rel='stylesheet' href='css/map.css'>
+
+</head>
+
+<body>
+  
+<div id="topBanner">
+  <img src='displacement-logo.png' height='65' width='100%'>
+</div>
+  
+<div id="map">
+	<a href="../"><button class="back-to-selector-button">Change Neighborhood</button></a>
+
+	<div class="cartodb-legend color">
+	 <div class="legend-name">Long Beach</div>
+	  <ul class="legend-list">
+	  	<div id="gentrification-legend" class="legend-section">
+	  		<div class="legend-title">Gentrification</div>
+		    <li><div class="bullet" style="background-color: #fcedb4;"></div> Vulnerable, did not gentrify</li>
+		    <li><div class="bullet" style="background-color: #3e7bb6;"></div> Gentrified 2000-2013 only</li>
+		    <li><div class="bullet" style="background-color: #229a00;"></div> Gentrified 1990-2000 only</li>
+		    <li><div class="bullet" style="background-color: #ff2900;"></div> Gentrified both decades</li>
+	    </div>
+	    <div id="landuse-legend" class="legend-section">
+	  		<div class="legend-title">Land Use</div>
+		    <li><div class="bullet" style="background-color: #F2636D;"></div> Commercial</li>
+		    <li><div class="bullet" style="background-color: #fdffaa;"></div> Residential</li>
+		    <li><div class="bullet" style="background-color: #A5D8A3;"></div> Open/Recreational</li>
+		    <li><div class="bullet" style="background-color: #f7be6d;"></div> Facilities</li>
+		    <li><div class="bullet" style="background-color: #bf9b69;"></div> Educational</li>
+		    <li><div class="bullet" style="background-color: #acd0ef;"></div> Industrial</li>
+		    <li><div class="bullet" style="background-color: #fff;"></div> Vacant</li>
+	    </div>
+	    <div id="stories-legend" class="legend-section">
+	    	<li><div class="bullet" style="background-color: #DDA221;"></div><em style="font-weight:400;"> Personal Narratives</em></li>
+
+	  </ul>
+	  <!-- 
+	  <div class="legend-title">Personal Narratives</div>
+	  <ul class="legend-list">
+	    <li><div class="bullet" style="background-color: #9b40f4;"></div></li>
+	  </ul> -->
+	</div> 
+</div>
+
+<!-- name	address	textshort	textlong	lat	lng	photo1cap	photo1url	photo2cap	photo2url	photo3cap	photo3url	videocap	videourl	videoframe	audiocap	audiourl	audioframe	photoreelcap	photoreelurl	photoreelframe	singlephotocap	singlephotourl	singlephotoframe --> 
+
+<script type="infowindow/html" id="infowindow_template">
+	<div class="cartodb-popup v2">
+	  <a href="#close" onclick="showLegend();" class="cartodb-popup-close-button close">x</a>
+		  <div class="cartodb-popup-content-wrapper">
+		    <div class="cartodb-popup-content">
+		    	<h2 style="color: #DDA221; line-height:1.5;"> {{name}} </h2> 
+		    	<h3><a href="http://maps.google.com/maps?q=&layer=c&cbll={{lat}},{{lng}}" target="_blank"> 
+		    		{{address}} </a>
+		    	</h3>
+		    		<hr style="height:0px; visibility:hidden;" />
+		    	<p> {{textlong}} </p>
+		    		<hr style="height:0px; visibility:hidden;" />
+	  		 	{{{videoframe}}}
+				<em> {{videocap}} </em> <br>
+					<hr style="height:0px; visibility:hidden;" /> 
+				{{{audioframe}}}
+				<em> {{audiocap}} </em> <br>
+					<hr style="height:0px; visibility:hidden;" />
+				{{{photoreelframe}}}
+					<hr style="height:0px; visibility:hidden;" />
+					<hr style="height:0px; visibility:hidden;" />
+		    </div>
+		  </div>
+	  <div class="cartodb-popup-tip-container"></div>
+	</div>
+</script>
+
+<script type="infowindow/html" id="hover_template">
+	<div class="cartodb-tooltip-content-wrapper">
+		<div class="cartodb-tooltip-content">
+			<h3 style="color: #DDA221;">{{name}}</h3>
+			<p>{{textshort}}</p>
+		</div>
+	</div>
+</script>
+
+<script src="js/neighborhood.js" type="text/javascript"></script>
+<script src="js/map.js" type="text/javascript"></script>
+
+</body>
+</html>

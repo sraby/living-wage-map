@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<title>Stories of LA Gentrification</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+		<link rel="stylesheet" href="css/style.css"/>
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.css">
+	   	<!--link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'-->
+	   	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:light,regular,regularitalic,semi-bold,bold,bolditalic" rel="stylesheet">
+
+	   	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-beta.2/leaflet.js"></script>
+
+	</head>
+
+	<body>
+		<div id="topBanner">
+  			<img src='displacement-logo.png' height='65' width='100%'>
+		</div>
+		<div id="button-panel">
+				<button id="south_la" class="selector-button left-button">South LA</button>
+				<button id="long_beach" class="selector-button middle-button">Long Beach</button>
+				<button id="boyle_heights" class="selector-button right-button">Boyle Heights</button>
+			</div>
+		<div id="mainmap">
+			<div id="about-bh" class="about-page"></div>
+	    	<div id="about-lb" class="about-page"></div>
+	    	<div id="about-sla" class="about-page"></div>
+		</div>
+
+		<script type="about/html" id="about-bh-content">
+			
+			<div class="about-banner">
+	       	   <span class="title-text">BOYLE HEIGHTS</span>
+	       	   <button class="about-close-button" onclick="toggleAbout();"><b>✕</b></button>
+	    	</div>
+	    
+    	</script>
+
+    	<script type="about/html" id="about-lb-content">
+
+			<div class="about-banner">
+			   <span class="title-text">LONG BEACH</span>
+			   <a href="longbeach/index.html">
+			   <button class="about-link-button">Explore ➔</button>
+			   </a>
+			   <button class="about-close-button" onclick="toggleAbout();"><b>✕</b>
+			   </button>
+			</div>
+			<span class="section-text">Introduction</span>
+			<div>
+			   <p>The Long Beach Building Healthy Communities (BHC) neighborhood is located near the south end of the 710 Freeway, near the Ports of Los Angeles and Long Beach. The neighborhood is bounded by W. Willow St and W. Hill St in the north and E 7th St to the south. It includes areas on both the west and east sides of the 710 Freeway.
+			   </p>
+			   <p>Long Beach is home to about 87,000 residents. The neighborhood is majority Latino, with Asians (15%), Blacks (12%) , and non-Hispanic whites (10%) making up the rest of the population.
+			   </p>
+			   <img src="https://ucla.box.com/shared/static/4yg2yf2e1egci8ztqmj4ixwyumqi6cyx.png" />
+			   <p>In 2015, the average household income in South Los Angeles was roughly $43,000, just slightly over half of the county’s average. Long Beach residents are also predominantly renters. Of these renters, a majority pay 30% or more of their income toward rent (i.e. are under rent burden) and a third live under conditions of extreme rent burden (spending 50% or more of their income on rent). These figures, combined with increasing development in the area, means the community faces many pressures and displacement risks.
+			   </p>
+			   <img src="https://ucla.box.com/shared/static/d0sjoxl59v18ry3wbsb9uic4g3stvez0.png" />
+			</div>
+				<hr style="height:0px; visibility:hidden;" />
+			<span class="section-text">Video</span>
+				<hr style="height:0px; visibility:hidden;" />
+			<div class="resp-container"> 
+			   <iframe class="resp-iframe header-remove" 
+			      src="https://www.youtube.com/embed/tJvE-BuYCDo?rel=0&amp;showinfo=0" 
+			      frameborder="0" 
+			      allow="autoplay; encrypted-media" 
+			      allowfullscreen>
+			   </iframe>
+			</div>
+				<hr style="height:0px; visibility:hidden;" />
+			<span class="section-text">Extra Info</span>
+			<div>
+			   <p>Building permits are taken out for projects large and small. The distribution of permits taken out can indicate the level of development activity occurring in an area. This analysis focus on major developments, where $100,000 or more of permits have been taken out at a single site.</p>
+			   <p>Between 2013 and 2016, the City of Long Beach saw $734 million in development at 770 major project sites. Within the Long Beach BHC neighborhood, there has been just over $70 million of activity at 65 major sites.</p>
+			   <img src="https://ucla.box.com/shared/static/8zrmdj3bdk6d6pz2id81kcp3ntdqa250.png" />
+			</div>
+
+		</script>
+
+		<script type="about/html" id="about-sla-content">
+
+		    <div class="about-banner">
+		       <span class="title-text">SOUTH LA</span>
+		       <button class="about-close-button" onclick="toggleAbout();"><b>✕</b></button>
+		    </div>
+
+		</script>
+
+			<!-- SCRIPT --> 
+			<script type="text/javascript" src="js/boyleHeights.js"></script>	
+			<script type="text/javascript" src="js/longBeach.js"></script>
+			<script type="text/javascript" src="js/southLA.js"></script>
+			<script type="text/javascript" src="js/map.js"></script>
+	</body>
+</html>
